@@ -6,7 +6,8 @@
       <router-link to="/multiselect">multiselect</router-link> |
       <router-link to="/moment_luxon">moment_luxon</router-link> |
       <router-link to="/chart">chart</router-link> |
-      <router-link to="/bulma">bulma</router-link>
+      <router-link to="/bulma">bulma</router-link> |
+      <router-link to="/scoped_slots">scoped slots</router-link>
     </div>
     <router-view/>
   </div>
