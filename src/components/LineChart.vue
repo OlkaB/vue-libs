@@ -6,8 +6,14 @@
         extends: Line,
         mixins: [reactiveProp],
         props: ['chartdata', 'chartoptions'],
+        watch: {
+            chartdata () {
+                this.$data._chart.update()
+            }
+        },
         mounted () {
-            this.renderChart(this.chartdata, this.chartoptions)
+            this.renderChart(this.chartdata, this.chartoptions);
+            console.log('this.$data: ', this.$data._chart)
         }
     }
 </script>
