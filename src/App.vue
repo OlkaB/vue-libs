@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/user">User</router-link> |
-      <router-link to="/basket">Basket</router-link> |
+      <router-link to="/user">Store modules II</router-link> |
+      <router-link to="/basket">Store modules I</router-link> |
       <router-link to="/multiselect">multiselect</router-link> |
       <router-link to="/moment_luxon">moment_luxon</router-link> |
       <router-link to="/chart">chart</router-link> |
@@ -12,6 +12,8 @@
     <router-view/>
   </div>
 </template>
+
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 
 <style lang="scss">
 #app {
