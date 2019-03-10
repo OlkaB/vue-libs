@@ -1,13 +1,20 @@
 <template>
   <div class="charts">
-    <h3>Charts</h3>
     <div v-if="APIChart.isLoaded" >
-        <h4>API chart is loaded</h4>
+        <h3>API data chart</h3>
         <LineChart     
             :chart-data="APIChart.chartdata"
             :chartoptions="APIChart.chartoptions"
         />
     </div>
+    <Alert v-else type="info">
+        Please wait, loading API chart data... 
+    </Alert>
+    <Alert v-if="APIChart.isResponseError" type="alert">
+        To see chart with data from API please turn on json server (./temp/json-server/readme.md)
+    </Alert>
+    
+    <h3>Static data chart</h3>
     <LineChart 
         :chart-data="staticChart.chartdata" :chartoptions="staticChart.chartoptions"
     />
@@ -16,8 +23,13 @@
 
 <script>
 import LineChart from "@/components/LineChart.vue";
+import Alert from "@/components/Alert.vue";
 
 export default {
+  components: {
+    LineChart,
+    Alert
+  },
   data() {
     return {
       staticChart: {
@@ -38,6 +50,7 @@ export default {
       },
       APIChart: {
         isLoaded: false,
+        isResponseError: false,
         chartdata: {
           labels: [],
           datasets: [
@@ -58,9 +71,6 @@ export default {
       }
     };
   },
-  components: {
-    LineChart
-  },
   mounted() {
     var self = this;
     this.$http
@@ -75,8 +85,10 @@ export default {
         },
         error => {
           console.error("Server response error: ", error);
+          self.APIChartisResponseError = true;
         }
       );
   }
 };
 </script>
+

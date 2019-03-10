@@ -25,6 +25,8 @@
 }
 #nav {
   padding: 30px;
+  box-shadow: 0 6px 15px rgba(140, 140, 140, 0.4);
+
   a {
     font-weight: bold;
     color: #2c3e50;
