@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import Multiselect from 'vue-multiselect'
 import VueResource from 'vue-resource'
+import './plugins/VueChart-globalSettings'
 
 Vue.config.productionTip = false
 

@@ -42,9 +42,12 @@ export default {
           labels: [],
           datasets: [
             {
-              label: "Data One",
-              backgroundColor: "#f87979",
-              data: []
+              label: "Api chart",
+              fill: false,
+              backgroundColor: "green",
+              borderColor: 'green',
+              pointHoverRadius: 5,
+              data: [],              
             }
           ]
         },
