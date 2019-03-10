@@ -1,0 +1,6 @@
+{
+  "lineChartData":{
+    "data":  [40, 50, 10, 20],
+    "labels": ["January", "February", "March", "April"]
+  }
+}

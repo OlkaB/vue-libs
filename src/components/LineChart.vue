@@ -5,15 +5,14 @@
     export default {
         extends: Line,
         mixins: [reactiveProp],
-        props: ['chartdata', 'chartoptions'],
+        props: ['chartData', 'chartoptions'],
         watch: {
-            chartdata () {
+            chartData () {
                 this.$data._chart.update()
             }
         },
         mounted () {
-            this.renderChart(this.chartdata, this.chartoptions);
-            console.log('this.$data: ', this.$data._chart)
+            this.renderChart(this.chartData, this.chartoptions);
         }
     }
 </script>
